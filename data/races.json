@@ -1,0 +1,77 @@
+{
+  "version": "2.0",
+  "races": {
+    "Humano": {
+      "name": "Humano",
+      "description": "Versátil e adaptável, os humanos são a raça mais comum e diversificada.",
+      "modifiers": { "STG": 0, "VIR": 0, "INT": 0, "CAR": 0, "SAB": 0, "AGI": 0 },
+      "movement": 9,
+      "darkvision": 0,
+      "abilities": "Versatilidade: +1 em todos os testes de perícia\nDeterminação: Pode rolar novamente um teste falho uma vez por dia"
+    },
+    "Elfo": {
+      "name": "Elfo",
+      "description": "Graciosos e longevos, elfos são ágeis e têm uma afinidade natural com magia.",
+      "modifiers": { "STG": 0, "VIR": -1, "INT": 1, "CAR": 0, "SAB": 0, "AGI": 2 },
+      "movement": 9,
+      "darkvision": 18,
+      "abilities": "Visão no Escuro: Vê 18m na escuridão como se fosse luz baixa\nResistência a Encantamento: Vantagem em testes contra magias de encantamento\nTranse: Não precisa dormir, apenas meditar por 4 horas"
+    },
+    "Anão": {
+      "name": "Anão",
+      "description": "Robustos e resistentes, anões são exímios artesãos e guerreiros determinados.",
+      "modifiers": { "STG": 2, "VIR": 2, "INT": 0, "CAR": 0, "SAB": 0, "AGI": -1 },
+      "movement": 7,
+      "darkvision": 18,
+      "abilities": "Resistência a Veneno: Vantagem em testes contra veneno\nConhecimento de Pedras: +2 em testes relacionados a pedras e metalurgia\nDuro como Pedra: +1 PV por nível"
+    },
+    "Halfling": {
+      "name": "Halfling",
+      "description": "Pequenos e ágeis, halflings são sorrateiros e têm sorte extraordinária.",
+      "modifiers": { "STG": -1, "VIR": 0, "INT": 0, "CAR": 2, "SAB": 0, "AGI": 2 },
+      "movement": 7,
+      "darkvision": 0,
+      "abilities": "Sorte do Halfling: Pode rolar novamente um 1 nos dados\nAgilidade Natural: +2 em Acrobacia e Furtividade\nCorajoso: Vantagem em testes contra medo"
+    },
+    "Draconato": {
+      "name": "Draconato",
+      "description": "Humanoides com traços de dragão, são orgulhosos e resistentes.",
+      "modifiers": { "STG": 2, "VIR": 0, "INT": 0, "CAR": 1, "SAB": 0, "AGI": 0 },
+      "movement": 9,
+      "darkvision": 18,
+      "abilities": "Sopro de Dragão: Pode usar um ataque de sopro (dano baseado no tipo de dragão)\nResistência de Dragão: Resistência ao tipo de dano do seu sopro\nHerança Draconica: +1 PV por nível"
+    },
+    "Tiefling": {
+      "name": "Tiefling",
+      "description": "Descendentes de seres infernais, tieflings têm uma conexão natural com magia.",
+      "modifiers": { "STG": 0, "VIR": 0, "INT": 1, "CAR": 2, "SAB": 0, "AGI": 0 },
+      "movement": 9,
+      "darkvision": 18,
+      "abilities": "Legado Infernal: Resistência a dano de fogo\nMagia Infernal: Pode lançar Truque Ardente uma vez por dia\nLíngua Infernal: Fala e lê infernal"
+    },
+    "Meio-Elfo": {
+      "name": "Meio-Elfo",
+      "description": "Uma mistura de humano e elfo, combinando o melhor de ambos os mundos.",
+      "modifiers": { "STG": 0, "VIR": 0, "INT": 0, "CAR": 2, "SAB": 0, "AGI": 1 },
+      "movement": 9,
+      "darkvision": 12,
+      "abilities": "Versatilidade: Escolha +1 em dois atributos diferentes\nHerança Dupla: Vantagem em testes contra encantamento\nHabilidade Social: +2 em Persuasão"
+    },
+    "Meio-Orc": {
+      "name": "Meio-Orc",
+      "description": "Combinação de humano e orc, são fortes e resistentes.",
+      "modifiers": { "STG": 2, "VIR": 1, "INT": -1, "CAR": 0, "SAB": 0, "AGI": 0 },
+      "movement": 9,
+      "darkvision": 18,
+      "abilities": "Ameaçador: +2 em Intimidação\nResiliência: Pode ficar com 1 PV ao invés de 0 uma vez por dia\nCrítico Brutal: Dano máximo em um dado de dano adicional ao acertar crítico"
+    },
+    "Gnomo": {
+      "name": "Gnomo",
+      "description": "Pequenos e inventivos, gnomes são curiosos e engenhosos.",
+      "modifiers": { "STG": -1, "VIR": 0, "INT": 2, "CAR": 0, "SAB": 1, "AGI": 0 },
+      "movement": 7,
+      "darkvision": 18,
+      "abilities": "Engenhosidade: +2 em testes de artesanato e invenção\nIlusão Natural: Pode lançar Ilusão Menor uma vez por dia\nEsperto: Vantagem em testes de INT contra magias"
+    }
+  }
+}

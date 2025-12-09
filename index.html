@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.R.I.S. RPG System - Ficha</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabeçalho -->
+        <header class="main-header">
+            <div class="header-content">
+                <h1><i class="fas fa-dragon"></i> C.R.I.S. RPG System</h1>
+                <nav>
+                    <a href="admin.html" class="btn-admin"><i class="fas fa-cog"></i> Admin</a>
+                    <button class="btn-save" id="btn-save-sheet"><i class="fas fa-save"></i> Salvar</button>
+                    <button class="btn-load" id="btn-load-sheet"><i class="fas fa-folder-open"></i> Carregar</button>
+                    <button class="btn-print" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</button>
+                </nav>
+            </div>
+        </header>
+
+        <div class="sheet-container">
+            <!-- Coluna Esquerda: Informações e Atributos -->
+            <div class="left-column">
+                <!-- Seção 1: Informações Básicas -->
+                <section class="card info-card">
+                    <h2><i class="fas fa-user"></i> Informações do Personagem</h2>
+                    <div class="info-grid">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" id="char-name" class="form-input" placeholder="Nome do herói">
+                        </div>
+                        <div class="form-group">
+                            <label>Raça</label>
+                            <select id="char-race" class="form-select">
+                                <option value="">Selecione...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Classe</label>
+                            <select id="char-class" class="form-select">
+                                <option value="">Selecione...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Origem</label>
+                            <select id="char-origin" class="form-select">
+                                <option value="Acolyte">Acólito</option>
+                                <option value="Folk Hero">Herói do Povo</option>
+                                <option value="Soldier">Soldado</option>
+                                <option value="Criminal">Criminoso</option>
+                                <option value="Noble">Nobre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nível</label>
+                            <div class="level-control">
+                                <button class="btn-level" id="btn-level-down">-</button>
+                                <input type="number" id="char-level" class="level-input" value="1" min="1" max="20">
+                                <button class="btn-level" id="btn-level-up">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 2: Atributos -->
+                <section class="card attributes-card">
+                    <h2><i class="fas fa-chart-bar"></i> Atributos</h2>
+                    <div class="points-info">
+                        <span>Pontos Disponíveis: <strong id="points-remaining">27</strong></span>
+                        <span>Máximo por Atributo: <strong id="attr-max">18</strong></span>
+                    </div>
+                    
+                    <div class="attributes-grid">
+                        <div class="attribute" data-attr="STG">
+                            <div class="attr-header">
+                                <h3>FORÇA</h3>
+                                <span class="attr-mod" id="mod-stg">+0</span>
+                            </div>
+                            <input type="number" id="attr-stg" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute" data-attr="VIR">
+                            <div class="attr-header">
+                                <h3>VIGOR</h3>
+                                <span class="attr-mod" id="mod-vir">+0</span>
+                            </div>
+                            <input type="number" id="attr-vir" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute" data-attr="INT">
+                            <div class="attr-header">
+                                <h3>INTELECTO</h3>
+                                <span class="attr-mod" id="mod-int">+0</span>
+                            </div>
+                            <input type="number" id="attr-int" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute" data-attr="CAR">
+                            <div class="attr-header">
+                                <h3>CARISMA</h3>
+                                <span class="attr-mod" id="mod-car">+0</span>
+                            </div>
+                            <input type="number" id="attr-car" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute" data-attr="SAB">
+                            <div class="attr-header">
+                                <h3>SABEDORIA</h3>
+                                <span class="attr-mod" id="mod-sab">+0</span>
+                            </div>
+                            <input type="number" id="attr-sab" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute" data-attr="AGI">
+                            <div class="attr-header">
+                                <h3>AGILIDADE</h3>
+                                <span class="attr-mod" id="mod-agi">+0</span>
+                            </div>
+                            <input type="number" id="attr-agi" class="attr-input" value="10" min="1" max="18">
+                            <div class="attr-controls">
+                                <button class="attr-btn minus">-</button>
+                                <button class="attr-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 3: Perícias -->
+                <section class="card skills-card">
+                    <h2><i class="fas fa-bullseye"></i> Perícias</h2>
+                    <div class="skills-grid">
+                        <!-- Perícias serão geradas dinamicamente -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Coluna Direita: Recursos e Combate -->
+            <div class="right-column">
+                <!-- Seção 4: Recursos -->
+                <section class="card resources-card">
+                    <h2><i class="fas fa-heart"></i> Recursos</h2>
+                    <div class="resources-grid">
+                        <div class="resource">
+                            <h3>Pontos de Vida</h3>
+                            <div class="resource-display">
+                                <input type="number" id="hp-current" class="resource-input" value="12">
+                                <span class="separator">/</span>
+                                <span id="hp-max" class="resource-max">12</span>
+                            </div>
+                            <div class="resource-info">
+                                <small>Base: <span id="hp-base">10</span> + Mod VIG × Nível</small>
+                            </div>
+                        </div>
+                        
+                        <div class="resource">
+                            <h3>Pontos de Mana</h3>
+                            <div class="resource-display">
+                                <input type="number" id="mp-current" class="resource-input" value="8">
+                                <span class="separator">/</span>
+                                <span id="mp-max" class="resource-max">8</span>
+                            </div>
+                            <div class="resource-info">
+                                <small>Base: <span id="mp-base">5</span> + Mod INT × Nível</small>
+                            </div>
+                        </div>
+                        
+                        <div class="resource">
+                            <h3>Pontos de Esforço</h3>
+                            <div class="resource-display">
+                                <input type="number" id="sp-current" class="resource-input" value="5">
+                                <span class="separator">/</span>
+                                <span id="sp-max" class="resource-max">5</span>
+                            </div>
+                            <div class="resource-info">
+                                <small>Base: <span id="sp-base">3</span> + Mod CAR × Nível</small>
+                            </div>
+                        </div>
+                        
+                        <div class="resource">
+                            <h3>Sanidade</h3>
+                            <div class="resource-display">
+                                <input type="number" id="san-current" class="resource-input" value="15">
+                                <span class="separator">/</span>
+                                <span id="san-max" class="resource-max">15</span>
+                            </div>
+                            <div class="resource-info">
+                                <small>Base: <span id="san-base">12</span> + Mod SAB</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 5: Combate -->
+                <section class="card combat-card">
+                    <h2><i class="fas fa-shield-alt"></i> Combate</h2>
+                    <div class="combat-grid">
+                        <div class="combat-stat">
+                            <h3>Defesa</h3>
+                            <div class="stat-value" id="defense-value">16</div>
+                            <small>10 + Armadura + Mod AGI</small>
+                        </div>
+                        
+                        <div class="combat-stat">
+                            <h3>Iniciativa</h3>
+                            <div class="stat-value" id="initiative-value">+2</div>
+                            <small>Mod AGI + Bônus</small>
+                        </div>
+                        
+                        <div class="combat-stat">
+                            <h3>Deslocamento</h3>
+                            <div class="stat-value" id="movement-value">9m</div>
+                            <small>Base da raça</small>
+                        </div>
+                        
+                        <div class="combat-stat">
+                            <h3>Proteção</h3>
+                            <div class="stat-value" id="protection-value">3</div>
+                            <small>Escudo/Armadura</small>
+                        </div>
+                    </div>
+                    
+                    <h3 class="subtitle">Resistências</h3>
+                    <div class="resistances-grid">
+                        <div class="resistance">
+                            <span>Fogo</span>
+                            <span id="res-fire" class="res-value">0</span>
+                        </div>
+                        <div class="resistance">
+                            <span>Frio</span>
+                            <span id="res-cold" class="res-value">0</span>
+                        </div>
+                        <div class="resistance">
+                            <span>Elétrico</span>
+                            <span id="res-elec" class="res-value">0</span>
+                        </div>
+                        <div class="resistance">
+                            <span>Ácido</span>
+                            <span id="res-acid" class="res-value">0</span>
+                        </div>
+                        <div class="resistance">
+                            <span>Veneno</span>
+                            <span id="res-poison" class="res-value">0</span>
+                        </div>
+                        <div class="resistance">
+                            <span>Psíquico</span>
+                            <span id="res-psychic" class="res-value">0</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 6: Ataques -->
+                <section class="card attacks-card">
+                    <h2><i class="fas fa-crosshairs"></i> Ataques</h2>
+                    <div class="attacks-list" id="attacks-list">
+                        <!-- Ataques serão gerados dinamicamente -->
+                    </div>
+                    <button class="btn-add-attack"><i class="fas fa-plus"></i> Adicionar Ataque</button>
+                </section>
+
+                <!-- Seção 7: Inventário -->
+                <section class="card inventory-card">
+                    <h2><i class="fas fa-backpack"></i> Inventário</h2>
+                    <div class="inventory-controls">
+                        <input type="text" id="item-name" placeholder="Nome do item" class="inv-input">
+                        <input type="number" id="item-weight" placeholder="Peso" class="inv-input" step="0.1">
+                        <button class="btn-add-item"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="inventory-list" id="inventory-list">
+                        <!-- Itens serão gerados dinamicamente -->
+                    </div>
+                    <div class="weight-display">
+                        <span>Peso: <strong id="current-weight">0</strong> / <strong id="max-weight">45</strong> kg</span>
+                    </div>
+                </section>
+
+                <!-- Seção 8: Habilidades e Magias -->
+                <section class="card abilities-card">
+                    <h2><i class="fas fa-star"></i> Habilidades & Magias</h2>
+                    <div class="abilities-tabs">
+                        <button class="tab-btn active" data-tab="abilities">Habilidades</button>
+                        <button class="tab-btn" data-tab="spells">Magias</button>
+                    </div>
+                    <div class="tab-content active" id="tab-abilities">
+                        <div class="abilities-list" id="abilities-list">
+                            <!-- Habilidades serão geradas dinamicamente -->
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-spells">
+                        <div class="spells-list" id="spells-list">
+                            <!-- Magias serão geradas dinamicamente -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Notificação -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
