@@ -14,14 +14,18 @@ Movimento = 5 + AGI
 2. Testes e Perícias
 
 Como testar:
-Joga 1d20 para cada ponto do Atributo relevante. 
+Joga 1d20 para cada ponto do Atributo relacionado. (1pt = 1d20; 2pt = 2d20. Max: 3d20) 
 Pega o maior resultado e soma o bônus da Perícia.
 
 Bônus de Perícia:
-Não Treinado: +0
-Treinado (Novato): +3
-Treinado (Especialista): +5
-Treinado (Mestre): +7
+A cada nivel você ganha 2 pontos pra colocar nas suas perícias,
+quanto mais pontos, maior o bonus que você receberá nos testes
+
+0 pt = Não Treinado: +0
+1 pt = Treinado (Novato): bonus de +3 (só possivel após o nivel 5)
+2 pt - Treinado (Especialista): bonus de +5 (só possivel apos o nivel 7)
+3 pt = Treinado (Mestre): bonus de +7 (só possivel apos o nivel 11)
+
 
 Exemplo (AGI 3, Especialista em Acrobacia +5):
 Joga 3d20, pega o maior (ex: 15) + 5 = 20.
@@ -54,7 +58,9 @@ Magia: Dano da Magia + INT ou SAB
 
 Escolha o Nível (inicial 1).
 
-Distribua pontos nos 6 Atributos (ex.: máximo 3).
+Distribua os 12 pontos iniciais nos 6 Atributos (máximo 3 por atributo).
+A cada número primo, os pontos máximos aumentam em dois e o 
+máximo por atributo aumenta em 1
 
 Calcule os Pontos Derivados (Vida, Mana, etc.) com as fórmulas.
 
