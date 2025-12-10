@@ -45,9 +45,17 @@ Muito Difícil: 25
 
 3. Combate
 
-Defesa (CD para ser acertado):
-Defesa Base = 10 + AGI
-Opção com Armadura: Usa o valor da armadura OU soma seu bônus à base.
+Defesa (número para ser acertado, se o dano do ataque for menor que a defesa, o dano não é sofrido):
+Defesa Base = 10 + AGI + Bônus da armadura sendo usada pelo personagem (padrão 0)
+
+Quando o dano for maior que a defesa, o ataque será sofrido. Nesse caso, existem duas possibilidades:
+
+Esquiva: Gasta um ponto de estamina e fornece +3 de defesa temporária naquele turno.
+Bloqueio: Aumenta em +5 a defesa, mas te deixa imóvel 
+
+No caso do ataque ser menor que a defesa e o dano não for sofrido,
+é possível executar um contra-ataque que gasta um ponto de estamina.
+O ataque so pode ser certo ou excelente 
 
 Dano:
 Corpo a Corpo: Dano da Arma + FOR
