@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Demo</title>
+    <style>
+        .attributes {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+    </style>
+<body>
+    <header>
+        <h1>Ficha RPG Demo</h1>
+    </header>
+    <form>
+        Nível: <input type="number" class="level" placeholder="Nível" value="1">
+        <p>
+            Pontos a distribuir: <span class="remaining">12</span>
+        </p>
+        <div class="attributes">
+            <input type="number" class="attribute-in att-for" placeholder="FOR" maxlength="2"> 
+            <input type="number" class="attribute-in att-agi" placeholder="AGI" maxlength="2">
+            <input type="number" class="attribute-in att-vit" placeholder="VIT" maxlength="2">
+            <input type="number" class="attribute-in att-car" placeholder="CAR" maxlength="2">
+            <input type="number" class="attribute-in att-sab" placeholder="SAB" maxlength="2">
+            <input type="number" class="attribute-in att-int" placeholder="INT" maxlength="2">
+        </div>
+    </form>
+    <div class="main-out"></div>
+
+    <script>
+        const mainOut = document.querySelector(".main-out")
+
+        // bloquando mais de dois dígitos para todos os inputs
+        document.querySelectorAll("input").forEach(inp => {
+            inp.addEventListener("input", function() {
+                this.value = this.value.slice(0, 2)
+            })
+        })
+        
+        // atributos iniciais
+        const remaining = document.querySelector(".remaining")
+        const attributesIn = document.querySelectorAll(".attribute-in")
+        const level = Number(document.querySelector("input.level").value)
+        let initialPoints = 12
+        let pointsPerAtt = 3
+
+        function verifyLevel(level) {
+
+        }
+
+        function updatePoints() {
+            let total = 0
+            verifyLevel(level)
+
+            // tratamento para valores abaixo de zero
+            attributesIn.forEach(inp => {
+                let val = Number(inp.value);
+                if (val < 0) { 
+                    inp.value = 0;
+                    val = 0;
+                }
+                if (val > pointsPerAtt) {
+                    inp.value = pointsPerAtt
+                    val = pointsPerAtt
+                    mainOut.innerHTML = `Seu nível não permite mais que ${pointsPerAtt} pontos por atributo<br>`
+                }
+                total += val;
+            });
+
+
+            let remainingPoints = initialPoints - total;
+
+            // caso de excedência
+            if (remainingPoints < 0) {
+                mainOut.innerHTML = "Você não pode gastar mais que 12 pontos!<br>"
+                this.value = this.oldValue; 
+                updatePoints();
+                return;
+            }
+
+            remaining.textContent = remainingPoints;
+        }
+
+        // tratando o array de inputs
+        attributesIn.forEach(inp => {
+            // algoritmo de memorização em caso de excedência
+            inp.oldValue = 0
+            inp.addEventListener("focus", function() {
+                mainOut.innerHTML = ""
+                this.oldValue = this.value
+            })
+
+            // interatividade de distribuição
+            inp.addEventListener("input", updatePoints)
+        });
+        // fim dos atributos iniciais
+
+
+    </script>
+</body>
+</html>

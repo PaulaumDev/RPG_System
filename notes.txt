@@ -1,0 +1,63 @@
+1. Atributos e Pontos Derivados
+
+Atributos (1 a 5):
+FOR, AGI, VIT, CAR, SAB, INT
+
+Nível = 1
+Vida = 5 + (Nível * 2) + (VIT * 5)
+Mana = 5 + Nível + (INT * 4) + (SAB * 2)
+Estamina = 5 + Nível + (FOR * 3) + (VIT * 3)
+Sanidade = 10 + (SAB * 3) + (CAR * 2)
+Carga Máx = 10 + (FOR * 5)
+Movimento = 5 + AGI
+
+2. Testes e Perícias
+
+Como testar:
+Joga 1d20 para cada ponto do Atributo relevante. 
+Pega o maior resultado e soma o bônus da Perícia.
+
+Bônus de Perícia:
+Não Treinado: +0
+Treinado (Novato): +3
+Treinado (Especialista): +5
+Treinado (Mestre): +7
+
+Exemplo (AGI 3, Especialista em Acrobacia +5):
+Joga 3d20, pega o maior (ex: 15) + 5 = 20.
+
+Tabela de Resultados (do dado puro):
+1 → Erro Fatal
+2-9 → Erro
+10-15 → Meio Acerto
+16-19 → Acerto
+20 → Excelência
+
+CD Sugerida (após somar bônus):
+Muito Fácil: 16
+Comum: 19
+Difícil: 22
+Muito Difícil: 25
+
+3. Combate
+
+Defesa (CD para ser acertado):
+Defesa Base = 10 + AGI
+Opção com Armadura: Usa o valor da armadura OU soma seu bônus à base.
+
+Dano:
+Corpo a Corpo: Dano da Arma + FOR
+À Distância: Dano da Arma + AGI
+Magia: Dano da Magia + INT ou SAB
+
+4. Criando a Ficha (Passos)
+
+Escolha o Nível (inicial 1).
+
+Distribua pontos nos 6 Atributos (ex.: máximo 3).
+
+Calcule os Pontos Derivados (Vida, Mana, etc.) com as fórmulas.
+
+Escolha as Perícias em que é Treinado e anote o Atributo base de cada.
+
+Calcule a Defesa, considerando armadura.
